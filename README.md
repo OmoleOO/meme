@@ -4,4 +4,4 @@ visit: [http://omoleoo.github.io/meme-maker/](http://omoleoo.github.io/meme-make
 
 
 # Screen Capture
-!(Screen capture)[https://github.com/OmoleOO/meme-maker/blob/master/asset/meme-maker.gif]
+![Screen capture](https://github.com/OmoleOO/meme-maker/blob/master/asset/meme-maker.gif)
