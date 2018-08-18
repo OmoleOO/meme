@@ -71,9 +71,12 @@ function handleFileSelect(evt) {
     // Create an image object
     let image = new Image();
     image.onload = function() {
-        let aspectRatio = image.width / image.height;
-        ctx.canvas.width = (image.width / 3) * aspectRatio;
-        ctx.canvas.height = (image.height / 3) * aspectRatio;
+        if (image.width.toString().length > 3)
+        {
+            let aspectRatio = image.width / image.height;
+            ctx.canvas.width = (image.width / 3) * aspectRatio;
+            ctx.canvas.height = (image.height / 3) * aspectRatio;
+        }
 
       window.imageSrc = this;
       redrawMeme(window.imageSrc, null, null);
