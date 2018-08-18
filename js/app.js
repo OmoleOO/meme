@@ -45,9 +45,9 @@ function redrawMeme(image, topLine, bottomLine) {
 
 function download(){
     ctx.restore();
-    ctx.font = "16px verdana";
-    ctx.fillText("@omoleoo", 410, canvas.height - 5);
-    ctx.strokeText("@omoleoo", 410, canvas.height - 5);
+    ctx.font = "1em verdana";
+    ctx.fillText("@omoleoo", canvas.width / 10, canvas.height - 5);
+    ctx.strokeText("@omoleoo", canvas.width / 10, canvas.height - 5);
     ctx.fill();
     ctx.stroke();
 
@@ -62,11 +62,7 @@ function download(){
 
 function handleFileSelect(evt) {
     'use strict';
-  let canvasWidth = 500;
-  let canvasHeight = 500;
   let file = evt.target.files[0];
-
-
 
   let reader = new FileReader();
   reader.onload = function(fileObject) {
@@ -75,6 +71,9 @@ function handleFileSelect(evt) {
     // Create an image object
     let image = new Image();
     image.onload = function() {
+        let aspectRatio = image.width / image.height;
+        ctx.canvas.width = (image.width / 3) * aspectRatio;
+        ctx.canvas.height = (image.height / 3) * aspectRatio;
 
       window.imageSrc = this;
       redrawMeme(window.imageSrc, null, null);
