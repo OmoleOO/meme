@@ -53,6 +53,7 @@ h2 {
   #canvas {
           margin-bottom: 20px;
           border: 2px solid #614949;
+          width: 33.3%;
   }
 
   @media only screen and (max-width: 1200px){
@@ -61,6 +62,10 @@ h2 {
            flex-flow: column nowrap;
            align-items: space-evenly;
            margin: 20px 0;
+      }
+      
+      #canvas {
+          width: 100%;
       }
 
 
